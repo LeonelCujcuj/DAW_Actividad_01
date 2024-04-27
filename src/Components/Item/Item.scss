@@ -1,0 +1,14 @@
+$primary:#ffe383;
+$secondary: #fd0000;
+
+.card {
+    border: none;
+    background-color: $primary;
+}
+
+.btn-info {
+    border: none;
+    border-radius: 25px;
+    background-color: $secondary;
+    color: white;
+}

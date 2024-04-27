@@ -1,0 +1,17 @@
+.menuNavBar {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+
+.menuNavBar .nav-link,
+.menuNavBar .navbar-brand {
+  color: white !important;
+}
+
+.menuNavBar .nav-link:hover {
+  color: lightgray !important; // Cambiar el color del texto al pasar el mouse (opcional)
+}
+
+.menuNavBar .navbar-toggler-icon {
+  background-color: rgb(255, 255, 255, 0.5); // Cambiar el color del icono del botón de menú desplegable (opcional)
+}
