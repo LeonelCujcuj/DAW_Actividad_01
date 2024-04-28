@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './Item.scss';
 
-function BasicExample() {
+function Item() {
   return (
     /*<Card style={{ width: '18rem' }}>*/
     <Card className="mb-3">
@@ -19,4 +19,4 @@ function BasicExample() {
   );
 }
 
-export default BasicExample;
+export default Item;
