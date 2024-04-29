@@ -1,0 +1,17 @@
+#AddGoal {
+    background-color: #30b189;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.overlapping-div {
+    position: fixed;
+    top: 75px;
+    margin-left: 25px;
+    z-index: 100;
+    text-align: left;
+}

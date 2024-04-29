@@ -6,6 +6,8 @@ import Menu from './Components/Menu/Menu';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import FloatingAddBtn from './Components/FloatingAddBtn/FloatingAddBtn';
+import ModalForm from './Components/ModalForm/ModalForm';
 
 function App() {
   const tareas = [{
@@ -33,13 +35,20 @@ function App() {
       <Menu></Menu>
       <Container>
       <Row>
-        <Col>
+        <Col xs={0} md={0} className='d-none d-sm-block d-sm-none d-md-block'>
           <Formulario></Formulario>
         </Col>
-        <Col>
+        <Col xs={0} md={0}>
+          <Row className='d-md-none'>
+            <Col className='overlapping-div'>
+              <ModalForm></ModalForm>
+            </Col>
+          </Row>
+          <Row>
           { tareas.map((tarea, index) => {
             return <Item name={tarea.name} description={tarea.description} DueDate={tarea.DueDate} />
           }) }
+          </Row>
         </Col>
       </Row>
     </Container>
