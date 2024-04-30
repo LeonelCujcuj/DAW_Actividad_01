@@ -8,28 +8,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import FloatingAddBtn from './Components/FloatingAddBtn/FloatingAddBtn';
 import ModalForm from './Components/ModalForm/ModalForm';
+import { useSelector } from 'react-redux';
 
 function App() {
-  const tareas = [{
-    name: 'Dia el trabajo',
-    description: 'Celebra el dia del trabajo con tus compañeros de trabajo',
-    DueDate: '2024-05-01'
-  },
-  {
-    name: 'Dia de la madre',
-    description: 'Compra un regalo para mama y celebra con ella su dia',
-    DueDate: '2024-05-10'
-  },
-  {
-    name: 'Cumpleaños de Keyla',
-    description: 'Lleva un pastel y una tarjeta de cumpleaños a la fiesta de Keyla',
-    DueDate: '2024-05-13'
-  },
-  {
-    name: 'Tarea de la universidad',
-    description: 'Hacer la tarea de la universidad para el dia lunes',
-    DueDate: '2024-04-29'
-  }]
+
+  const goals = useSelector((state) => state.goals.goals);
   return (
     <div className="App">
       <Menu></Menu>
@@ -45,8 +28,8 @@ function App() {
             </Col>
           </Row>
           <Row>
-          { tareas.map((tarea, index) => {
-            return <Item name={tarea.name} description={tarea.description} DueDate={tarea.DueDate} />
+          { goals.map((tarea, index) => {
+            return <Item key={index} name={tarea.name} description={tarea.description} DueDate={tarea.DueDate} />
           }) }
           </Row>
         </Col>
