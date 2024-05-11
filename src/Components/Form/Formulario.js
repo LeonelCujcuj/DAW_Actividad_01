@@ -3,9 +3,11 @@ import Form from 'react-bootstrap/Form';
 import './Formulario.scss';
 import { useDispatch } from 'react-redux';
 import { addGoal } from '../../reducers/goalsSlice';
-import { useRef } from 'react';
+import { addTask } from '../../reducers/tasksSlice';
+import React, { useRef } from 'react';
 
-function Formulario() {
+
+function Formulario(props) {
   const inputRefName = useRef();
   const inputRefDescription = useRef();
   const inputRefDueDate = useRef();
@@ -35,7 +37,7 @@ function Formulario() {
       </Form.Group>      
 
       <Button variant="primary" type="submit" id='AddGoal' onClick={addItem}>
-        Add Goal
+        {props.selectedOption === 'tasks' ? 'Add Task' : 'Add Goal'}
       </Button>
     </Form>
   );
