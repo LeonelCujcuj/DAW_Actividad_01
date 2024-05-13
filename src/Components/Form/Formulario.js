@@ -14,10 +14,23 @@ function Formulario(props) {
 
   const dispatch = useDispatch();
 
-  const addItem = (e)=>{
+  const addItem = (e) => {
     e.preventDefault();
-    dispatch(addGoal({'name': inputRefName.current.value, 'description': inputRefDescription.current.value, 'dueDate': inputRefDueDate.current.value}));
+    const timestamp = Date.now();
+    const newItem = {
+      id: timestamp,
+      name: inputRefName.current.value,
+      description: inputRefDescription.current.value,
+      dueDate: inputRefDueDate.current.value
+    };
+
+    if (props.selectedOption === 'tasks') {
+      dispatch(addTask(newItem)); // Agrega una tarea
+    } else if (props.selectedOption === 'goals') {
+      dispatch(addGoal(newItem)); // Agrega una meta
+    }
   };
+
 
   return (
     <Form>
