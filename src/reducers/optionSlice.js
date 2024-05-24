@@ -4,7 +4,7 @@ import { Value } from "sass";
 export const optionSlice = createSlice({
     name: "option",
     initialState: {
-        Value: 'tasks',
+        value: 'tasks',
     },
     reducers: {
         changeOption: (state, action) => {
@@ -14,5 +14,5 @@ export const optionSlice = createSlice({
     });
 
 export const { changeOption } = optionSlice.actions;
-
+export const selectOption = (state) => state.option.value;
 export default optionSlice.reducer;

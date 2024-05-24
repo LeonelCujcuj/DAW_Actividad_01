@@ -28,8 +28,8 @@ function Menu() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav defaultActiveKey={option} className="me-auto">
-              <Nav.Link eventKey='tasks' onClick={(e) => changeOptionFunction(e, 'tasks')}>Tasks</Nav.Link>
-              <Nav.Link eventKey='goals' onClick={(e) => changeOptionFunction(e, 'goals')}>Goals</Nav.Link>
+              <Nav.Link className={option === 'tasks' ? 'active' : ''} eventKey='tasks' onClick={(e) => changeOptionFunction(e, 'tasks')}>Tasks</Nav.Link>
+              <Nav.Link className={option === 'goals' ? 'active' : ''} eventKey='goals' onClick={(e) => changeOptionFunction(e, 'goals')}>Goals</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

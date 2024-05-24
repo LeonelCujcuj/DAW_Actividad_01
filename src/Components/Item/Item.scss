@@ -1,9 +1,12 @@
 $primary:#ffe383;
 $secondary: #fd0000;
+$cards: #f5f5f5;
+$task-color: #ffe383; // Color para items de tasks
+$goal-color: #ffc872; // Color para items de goals
 
 .card {
     border: none;
-    background-color: $primary;
+    background-color: $cards;
 }
 
 .btn-info {
@@ -11,4 +14,12 @@ $secondary: #fd0000;
     border-radius: 25px;
     background-color: $secondary;
     color: white;
+}
+
+.task-item {
+  background-color: $task-color;
+}
+
+.goal-item {
+  background-color: $goal-color;
 }

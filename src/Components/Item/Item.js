@@ -22,13 +22,8 @@ function Item(props) {
     }
   };
 
-  /*  const removeItem = (e) => {
-      e.preventDefault();
-      dispatch(removeGoal(props.id));
-    };*/
-
   return (
-    <Card className="mb-3">
+    <Card className={`mb-3 ${props.selectedOption === 'tasks' ? 'task-item' : 'goal-item'}`}>
       <Card.Body>
         <Card.Text className='fw-bold'>Name</Card.Text>
         <Card.Text>{props.name}</Card.Text>
