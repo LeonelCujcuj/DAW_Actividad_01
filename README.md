@@ -68,3 +68,48 @@ Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/d
 ### `npm run build` falla al minimizar
 
 Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### Uso de Dockerfile
+
+### 1. Verificar que Docker esté corriendo
+Asegúrate de que el servicio Docker esté en ejecución. Dependiendo de tu sistema operativo, puedes verificar esto de la siguiente manera:
+
+- **En Windows y macOS:**
+  - Asegúrate de que Docker Desktop esté abierto y funcionando.
+- **En Linux:**
+  - Abre una terminal y ejecuta:
+ 
+    sudo systemctl start docker
+
+
+### 2. Construir la imagen Docker
+Abre una terminal o línea de comandos y navega al directorio donde se encuentra el archivo `Dockerfile`. Luego, ejecuta el siguiente comando para construir la imagen Docker:
+
+docker build -t docker-react-image:1.0 .
+
+
+### 3. Verificar que la imagen se haya creado correctamente
+Para verificar que la imagen se haya creado correctamente, puedes listar todas las imágenes Docker con el siguiente comando:
+
+docker images
+
+Deberías ver `docker-react-image` en la lista de imágenes.
+
+
+### 4. Correr un contenedor a partir de la imagen
+Para correr un contenedor a partir de la imagen, usa el siguiente comando:
+
+docker run -p 4000:80 --name docker-react-container docker-react-image:1.0
+
+
+### 5. Verificar que el contenedor esté corriendo
+Para verificar que el contenedor esté en ejecución, puedes listar todos los contenedores con el siguiente comando:
+
+docker ps
+
+Deberías ver `docker-react-container` en la lista de contenedores en ejecución.
+
+
+### 6. Acceder a la aplicación
+Abre un navegador web y navega a `http://localhost:4000`. Deberías ver la aplicación en ejecución.
